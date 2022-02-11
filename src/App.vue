@@ -1,6 +1,8 @@
 <template>
   <div>
-    <router-link to="/">Get Book</router-link>
+    <div class="nav">
+      <router-link to="/">Get Book</router-link>
+    </div>
     <router-view />
   </div>
 </template>
