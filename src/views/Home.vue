@@ -1,28 +1,23 @@
 <template>
-  <div class="home">
-    <div class="search">
-      <input
-        type="text"
-        class="search__input"
-        id="search__input"
-        v-model="searchValue"
-        @input="handleInput"
-      />
-      <ul class="list">
-        <li class="list__item" v-for="item in results" :key="item.key">
-          {{ item.title }}
-        </li>
-      </ul>
-    </div>
+  <div class="homeWrapper">
+    <Info />
+    <Search />
   </div>
 </template>
 
 <script lang="ts">
 import axios from "axios";
 import { debounce } from "lodash";
+import Info from "@/components/Info.vue";
+import Search from "@/components/Search.vue";
 
 export default {
   name: "Home",
+  components: {
+    Info,
+    Search,
+  },
+
   data(): HomeData {
     return {
       searchValue: "",
@@ -53,24 +48,17 @@ interface HomeData {
 </script>
 
 <style lang="scss" scoped>
-.home {
+.homeWrapper {
   margin: 0;
-  padding: 30px;
+  padding: 0 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-}
-
-.search {
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-
-  &__input {
-    height: 30px;
-    border: 0;
-    border-bottom: 1px solid black;
-  }
+  height: 100vh;
+  background-image: url("../assets/books-gb5e5e6791_1920.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 7% 0%;
 }
 </style>
