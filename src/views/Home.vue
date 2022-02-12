@@ -23,7 +23,7 @@ import { debounce } from "lodash";
 
 export default {
   name: "Home",
-  data() {
+  data(): HomeData {
     return {
       searchValue: "",
       results: [],
@@ -31,7 +31,7 @@ export default {
   },
 
   methods: {
-    handleInput: debounce(function (this: any) {
+    handleInput: debounce(function (this: HomeData) {
       axios
         .get(
           `https://openlibrary.org/search.json?q=${this.searchValue}&_facet=false&_spellcheck_count=0&limit=10&fields=key,cover_i,title,author_name,name&mode=everything`
@@ -45,6 +45,11 @@ export default {
     }, 500),
   },
 };
+
+interface HomeData {
+  searchValue: string;
+  results: Array<string>;
+}
 </script>
 
 <style lang="scss" scoped>
