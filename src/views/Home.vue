@@ -1,7 +1,7 @@
 <template>
   <div class="homeWrapper">
-    <Info/>
-    <Search/>
+    <Info />
+    <Search />
   </div>
 </template>
 
@@ -56,7 +56,7 @@ interface HomeData {
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-image: url('../assets/books-gb5e5e6791_1920.jpg');
+  background-image: url("../assets/books-gb5e5e6791_1920.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 7% 0%;
