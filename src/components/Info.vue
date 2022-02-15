@@ -27,18 +27,24 @@ export default {
     letter-spacing: 2px;
     font-weight: 700;
     margin: 15px 0;
+    color: rgb(66, 11, 66);
+    z-index: 3;
   }
 
   .first-paragraph {
     margin: 5px;
     font-size: 20px;
     font-weight: 300;
+    color: rgb(66, 11, 66);
+    z-index: 3;
   }
 
   .second-paragraph {
     margin: 25px 0 0 0;
     font-size: 15px;
-    font-weight: 300;
+    font-weight: 600;
+    color: rgb(66, 11, 66);
+    z-index: 3;
   }
 }
 </style>
