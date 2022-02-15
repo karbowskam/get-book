@@ -4,8 +4,8 @@
       type="text"
       class="input"
       id="search__input"
-      v-model="searchValue"
-      @input="handleInput"
+      :value="value"
+      @input="handleChange"
     />
   </div>
 </template>
@@ -13,6 +13,19 @@
 <script lang="ts">
 export default {
   name: "Search",
+  props: {
+    value: {
+      type: String,
+      required: true,
+    },
+  },
+
+  methods: {
+    handleChange(e: Event): void {
+      const target = e.target as HTMLInputElement;
+      this.$emit("input", target.value);
+    },
+  },
 };
 </script>
 
